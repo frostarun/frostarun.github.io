@@ -14,11 +14,11 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   displayed = '';
   private roles = [
-    'Java Engineer',
+    'Development Engineer',
+    'Java & Spring Boot Expert',
     'Microservices Architect',
     'OAuth2 & SSO Specialist',
-    'Cloud & DevOps Engineer',
-    'Team Leader & Mentor'
+    'Cloud & DevOps Engineer'
   ];
   private ri = 0;
   private ci = 0;

@@ -44,9 +44,9 @@ export class PortfolioService {
 
   readonly experiences: Experience[] = [
     {
-      role: 'Software Engineer',
+      role: 'Development Engineer 4',
       company: 'Comcast',
-      period: 'Apr 2024 — Present',
+      period: 'Apr 2025 — Present',
       current: true,
       domain: 'OTT · Identity & Access Management',
       bullets: [
@@ -62,7 +62,7 @@ export class PortfolioService {
       role: 'Sr. Associate — Technology',
       company: 'Synechron',
       client: 'CitiBank',
-      period: 'Sep 2021 — Mar 2024',
+      period: 'Sep 2021 — Mar 2025',
       current: false,
       domain: 'FinTech · Forex Trading',
       bullets: [
@@ -74,9 +74,9 @@ export class PortfolioService {
     },
     {
       role: 'Senior Software Engineer',
-      company: 'SMI',
+      company: 'Sri Mookambika Infosolutions',
       client: 'Global Healthcare Exchange',
-      period: 'Sep 2020 — Sep 2021',
+      period: 'Oct 2020 — Sep 2021',
       current: false,
       domain: 'Healthcare · Supply Chain',
       bullets: [
@@ -87,8 +87,8 @@ export class PortfolioService {
       tags: ['Java', 'Spring Boot', 'Angular', 'REST APIs', 'PostgreSQL']
     },
     {
-      role: 'Software Associate Engineer',
-      company: 'Banca Sella',
+      role: 'Software Engineer',
+      company: 'Sella (Banca Sella)',
       period: 'Aug 2018 — Apr 2020',
       current: false,
       domain: 'Banking · Back Office',
@@ -99,8 +99,8 @@ export class PortfolioService {
       tags: ['Java', 'Spring', 'Batch', 'Oracle', 'Sybase']
     },
     {
-      role: 'Software Engineer',
-      company: 'Corent Technologies',
+      role: 'Software Development Engineer',
+      company: 'Corent Technology, Inc.',
       period: 'May 2016 — Jul 2018',
       current: false,
       domain: 'Cloud · SaaS',
@@ -151,10 +151,16 @@ export class PortfolioService {
     }
   ];
 
+  readonly education = {
+    degree: "Bachelor's Degree, Computer Science",
+    college: 'New Prince Shri Bhavani College of Engineering and Technology',
+    years: '2012 – 2016'
+  };
+
   readonly languages: Language[] = [
     { name: 'English',    level: 'Full Professional',     pct: 95 },
     { name: 'Tamil',      level: 'Professional Working',   pct: 85 },
     { name: 'Sourashtra', level: 'Limited Working',        pct: 40 },
-    { name: 'Japanese',   level: 'Elementary',             pct: 22 }
+    { name: 'Japanese',   level: 'Limited Working',        pct: 22 }
   ];
 }

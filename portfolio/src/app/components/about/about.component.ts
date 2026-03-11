@@ -10,8 +10,9 @@ import { PortfolioService } from '../../services/portfolio.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  profile = this.svc.profile;
+  profile   = this.svc.profile;
   languages = this.svc.languages;
+  education = this.svc.education;
 
   constructor(private svc: PortfolioService) {}
 }

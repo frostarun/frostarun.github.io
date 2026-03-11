@@ -32,12 +32,12 @@
           <div class="info-card">
             <span class="ic-i">💼</span>
             <span class="ic-l">Current Role</span>
-            <span class="ic-v">Software Engineer &#64; Comcast</span>
+            <span class="ic-v">Dev Engineer 4 &#64; Comcast</span>
           </div>
           <div class="info-card">
             <span class="ic-i">🎓</span>
             <span class="ic-l">Education</span>
-            <span class="ic-v">B.E Computer Science</span>
+            <span class="ic-v small">B.E Computer Science · 2016</span>
           </div>
           <div class="info-card">
             <span class="ic-i">✉️</span>
@@ -48,7 +48,19 @@
       </div>
 
       <div class="languages-panel reveal">
-        <h3 class="panel-title">Languages Spoken</h3>
+        <div class="edu-block">
+          <h3 class="panel-title">Education</h3>
+          <div class="edu-row">
+            <span class="edu-icon">🎓</span>
+            <div>
+              <div class="edu-degree">{{ education.degree }}</div>
+              <div class="edu-college">{{ education.college }}</div>
+              <div class="edu-years">{{ education.years }}</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="panel-title lang-panel-title">Languages Spoken</h3>
         @for (lang of languages; track lang.name) {
           <div class="lang-row">
             <div class="lang-meta">
