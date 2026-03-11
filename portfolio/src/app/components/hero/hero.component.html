@@ -1,0 +1,65 @@
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        Available for opportunities
+      </div>
+
+      <h1 class="hero-name">{{ profile.name }}</h1>
+
+      <p class="hero-role">
+        <span class="role-text">{{ displayed }}</span><span class="cursor">|</span>
+      </p>
+
+      <p class="hero-bio">{{ profile.summary }}</p>
+
+      <div class="hero-actions">
+        <a [href]="'mailto:' + profile.email" class="btn btn-primary">
+          Get In Touch
+        </a>
+        <a [href]="profile.linkedin" target="_blank" rel="noopener" class="btn btn-outline">
+          LinkedIn
+        </a>
+        <a [href]="profile.github" target="_blank" rel="noopener" class="btn btn-outline">
+          GitHub
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-n">9+</span>
+          <span class="stat-l">Years</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-n">5</span>
+          <span class="stat-l">Companies</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-n">35+</span>
+          <span class="stat-l">Technologies</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-n">4</span>
+          <span class="stat-l">Languages</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="scroll-hint" (click)="scrollTo('#about')" aria-label="Scroll down">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</section>

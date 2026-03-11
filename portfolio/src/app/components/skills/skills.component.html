@@ -1,0 +1,24 @@
+<section id="skills" class="skills section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="sec-label">// tech stack</span>
+      <h2 class="sec-title">Skills &amp; Technologies</h2>
+    </div>
+
+    <div class="skills-grid">
+      @for (group of groups; track group.label) {
+        <div class="sk-card reveal">
+          <div class="sk-head">
+            <span class="sk-icon">{{ group.icon }}</span>
+            <span class="sk-label">{{ group.label }}</span>
+          </div>
+          <div class="sk-tags">
+            @for (skill of group.skills; track skill) {
+              <span class="sk-tag">{{ skill }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

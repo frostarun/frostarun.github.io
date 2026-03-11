@@ -1,0 +1,58 @@
+<section id="contact" class="contact section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="sec-label">// get in touch</span>
+      <h2 class="sec-title">Contact</h2>
+    </div>
+
+    <div class="contact-inner reveal">
+      <div class="contact-text">
+        <p>
+          Open to new opportunities, interesting engineering challenges,
+          and collaborations. Whether it's a full-time role, consulting,
+          or just a good tech conversation — I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-links">
+        <a [href]="'mailto:' + profile.email" class="c-link">
+          <span class="c-icon">✉</span>
+          <div>
+            <span class="c-label">Email</span>
+            <span class="c-val">{{ profile.email }}</span>
+          </div>
+        </a>
+
+        <a [href]="profile.linkedin" target="_blank" rel="noopener" class="c-link">
+          <span class="c-icon">💼</span>
+          <div>
+            <span class="c-label">LinkedIn</span>
+            <span class="c-val">linkedin.com/in/frostarun</span>
+          </div>
+        </a>
+
+        <a [href]="profile.github" target="_blank" rel="noopener" class="c-link">
+          <span class="c-icon">🐙</span>
+          <div>
+            <span class="c-label">GitHub</span>
+            <span class="c-val">github.com/frostarun</span>
+          </div>
+        </a>
+
+        <a [href]="'tel:' + profile.phone" class="c-link">
+          <span class="c-icon">📞</span>
+          <div>
+            <span class="c-label">Phone</span>
+            <span class="c-val">{{ profile.phone }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>Crafted by <span>Arun Kumar GR</span> · Chennai, India</p>
+  </div>
+</footer>

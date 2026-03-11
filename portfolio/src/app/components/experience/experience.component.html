@@ -1,0 +1,49 @@
+<section id="experience" class="experience section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="sec-label">// career</span>
+      <h2 class="sec-title">Experience</h2>
+    </div>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.company; let i = $index) {
+        <div class="tl-item reveal" [class.current]="exp.current">
+          <div class="tl-spine">
+            <div class="tl-dot" [class.dot-current]="exp.current"></div>
+          </div>
+
+          <div class="tl-card">
+            <div class="card-head">
+              <div class="card-title-row">
+                <h3 class="job-role">{{ exp.role }}</h3>
+                <span class="job-period">{{ exp.period }}</span>
+              </div>
+              <div class="job-company">
+                {{ exp.company }}
+                @if (exp.client) {
+                  <span class="client-badge">· {{ exp.client }}</span>
+                }
+                @if (exp.current) {
+                  <span class="current-badge">Current</span>
+                }
+              </div>
+              <div class="job-domain">{{ exp.domain }}</div>
+            </div>
+
+            <ul class="job-bullets">
+              @for (b of exp.bullets; track b) {
+                <li>{{ b }}</li>
+              }
+            </ul>
+
+            <div class="job-tags">
+              @for (tag of exp.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

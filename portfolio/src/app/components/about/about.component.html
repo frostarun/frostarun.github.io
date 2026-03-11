@@ -1,0 +1,66 @@
+<section id="about" class="about section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="sec-label">// about me</span>
+      <h2 class="sec-title">Who I Am</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a Senior Software Engineer based in <strong>Chennai, India</strong>,
+          with over 9 years of experience delivering production enterprise systems
+          across OTT, fintech, healthcare, and banking domains.
+        </p>
+        <p>
+          Currently at <strong>Comcast</strong>, I build identity and access management
+          systems for OTT platforms — SSO, OAuth 2.0 flows, token management, and
+          serverless services on AWS.
+        </p>
+        <p>
+          I thrive at the intersection of backend architecture and security engineering.
+          I enjoy mentoring, leading technical discussions, and continuously exploring
+          new technologies.
+        </p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <span class="ic-i">📍</span>
+            <span class="ic-l">Location</span>
+            <span class="ic-v">{{ profile.location }}</span>
+          </div>
+          <div class="info-card">
+            <span class="ic-i">💼</span>
+            <span class="ic-l">Current Role</span>
+            <span class="ic-v">Software Engineer &#64; Comcast</span>
+          </div>
+          <div class="info-card">
+            <span class="ic-i">🎓</span>
+            <span class="ic-l">Education</span>
+            <span class="ic-v">B.E Computer Science</span>
+          </div>
+          <div class="info-card">
+            <span class="ic-i">✉️</span>
+            <span class="ic-l">Email</span>
+            <span class="ic-v small">{{ profile.email }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="languages-panel reveal">
+        <h3 class="panel-title">Languages Spoken</h3>
+        @for (lang of languages; track lang.name) {
+          <div class="lang-row">
+            <div class="lang-meta">
+              <span class="lang-name">{{ lang.name }}</span>
+              <span class="lang-level">{{ lang.level }}</span>
+            </div>
+            <div class="lang-track">
+              <div class="lang-fill" [style.width.%]="0" [attr.data-w]="lang.pct"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

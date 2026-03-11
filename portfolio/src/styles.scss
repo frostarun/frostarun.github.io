@@ -1,0 +1,110 @@
+/* ============================================================
+   GLOBAL STYLES — Warm Low-Contrast Dark Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Background — warm near-black */
+  --bg:          #0f0e17;
+  --bg-rgb:      15, 14, 23;
+  --bg-2:        #171621;
+  --bg-3:        #1e1d2e;
+
+  /* Surfaces */
+  --surface:     rgba(255,255,255,0.04);
+  --surface-2:   rgba(255,255,255,0.07);
+  --border:      rgba(255,255,255,0.07);
+
+  /* Accent palette — warm sand, soft violet, teal */
+  --accent:      #c9b99a;
+  --accent-rgb:  201,185,154;
+  --accent-2:    #9b8ec8;
+  --accent-3:    #6ec6b4;
+
+  /* Text */
+  --text-primary:  #ede8df;
+  --text-muted:    #9896a8;
+  --text-faint:    #4a4860;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(201,185,154,0.4); border-radius: 3px; }
+
+/* ── Shared section layout ── */
+.section {
+  padding: 7rem 0;
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+.section-header { margin-bottom: 3rem; }
+
+.sec-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent-3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sec-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+              transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Soft section tints ── */
+#about {
+  background: radial-gradient(ellipse 80% 40% at 50% 0%,
+    rgba(201,185,154,0.04) 0%, transparent 60%);
+}
+#skills {
+  background: radial-gradient(ellipse 80% 40% at 50% 0%,
+    rgba(155,142,200,0.04) 0%, transparent 60%);
+}

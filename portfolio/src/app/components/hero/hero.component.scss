@@ -1,0 +1,225 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem 0 5rem;
+  overflow: hidden;
+}
+
+/* ── Decorative background ── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+.orb-1 {
+  width: 520px; height: 520px;
+  top: -120px; left: -100px;
+  background: var(--accent);
+}
+.orb-2 {
+  width: 400px; height: 400px;
+  bottom: -80px; right: 5%;
+  background: var(--accent-2);
+}
+.orb-3 {
+  width: 280px; height: 280px;
+  top: 35%; right: 20%;
+  background: var(--accent-3);
+  opacity: 0.12;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%);
+}
+
+/* ── Content ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.22);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.pulse-dot {
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2.2s infinite;
+}
+
+.hero-name {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.hero-role {
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  color: var(--text-muted);
+  margin-bottom: 1.6rem;
+  min-height: 2rem;
+  animation: fadeUp 0.5s 0.18s ease both;
+
+  .role-text { color: var(--accent-2); font-weight: 500; }
+  .cursor {
+    color: var(--accent-2);
+    animation: blink 0.85s step-end infinite;
+    margin-left: 1px;
+  }
+}
+
+.hero-bio {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  max-width: 580px;
+  margin-bottom: 2.25rem;
+  animation: fadeUp 0.5s 0.26s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: fadeUp 0.5s 0.34s ease both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s;
+  border: none;
+
+  &-primary {
+    background: var(--accent);
+    color: var(--bg);
+    &:hover { opacity: 0.88; transform: translateY(-2px); }
+  }
+
+  &-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    &:hover {
+      border-color: var(--accent);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* ── Stats ── */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.5s 0.42s ease both;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  .stat-n {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+  .stat-l {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.stat-sep {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  animation: bounce 2.5s ease-in-out infinite, fadeUp 0.5s 0.6s ease both;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover { border-color: var(--accent); color: var(--accent); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.4; transform:scale(0.65); }
+}
+@keyframes blink {
+  0%,100% { opacity:1; } 50% { opacity:0; }
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(6px); }
+}

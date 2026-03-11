@@ -1,0 +1,17 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="nav-inner">
+    <a class="logo" (click)="scrollTo('#hero')">
+      <span class="logo-name">arun</span><span class="logo-dot">.</span>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      @for (link of links; track link.href) {
+        <li><a (click)="scrollTo(link.href)">{{ link.label }}</a></li>
+      }
+    </ul>
+
+    <button class="menu-btn" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
